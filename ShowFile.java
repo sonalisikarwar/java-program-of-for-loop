@@ -1,0 +1,99 @@
+// display a text file
+package shivaafoundation.javatutorial;
+import java.io.*;
+class ShwFofile{
+public static void main(String args[]){
+int i;
+FileInputStream fin = null;
+//first confirm the file name have been specified
+System.out.println("Usage : Show filename");
+return;
+
+}
+try {
+    fin = new FileInputSteam(args[0]);
+    do{
+        i = fin.read();
+        if(i !=-1)System.out.println((char)i);
+    } while(i !=-1);
+} catch (FileNotFoundException e){
+    System.out.println("An I/O error occurred");
+} finally {
+    try{
+        if(fin !=-1) fin.close();
+    } catch(IOException e) {
+        System.out.println("Error in closing file");
+    }
+}
+    
+    }
+/*try{
+fin = new FileInputStream(args[0]);
+do{
+i = fin.read();
+if (i !=-1) System.out.println((char)i);
+)while(i!=-1)
+System.out.println("I/O Error:" +e);
+)finally{
+if(fin i=null fin.close();
+}catch{IOException e) {
+System.out.println("Error closing file");
+}
+}
+
+  /*
+package shivaafoundation.javatutorial;
+import java.io.*;
+public class ShowFile {
+    public static void main (String args[]){
+        int i;
+        FileInputStream fin;
+        // first confirm the file has been specified
+        if(args.length !=1){
+          System.out.println("Usage : Show filename") ;
+          return;
+        }
+        //Attempt to open the file
+        try{
+            fin = new FileInputStream(args[0]);
+        }catch (FileNotFoundException e){
+            System.out.println("Cannot Open File");
+            return;
+        }
+        //At this point, file is open and can be read
+        //The following reads characters until EOF is encountered
+        try{
+            do{
+                i = fin.read();
+                if (i!=-1);
+            }while (i!=-1);
+        }catch (IOException e){
+             System.out.println("Error in reading File");
+            }
+       // close the file
+      try{System.out.println("error in reading file");
+
+           fin.close();
+                   }catch (IOException e){
+
+            System.out.println("error in closing  File");
+        }
+    }
+    
+}
+//file close try with finally 
+/*try {
+do{
+i = fin.read();
+if(i != -1)System.out.println((char)i);
+}while(i != -1);
+} catch(IOException e){
+} finally {
+//close the file on thecway out of try block
+try{
+fin.close();
+} catch(IOException e){
+System.out.println("error closing  file");
+}
+}
+*/
